@@ -1,0 +1,11 @@
+{
+  "name": "Waldeck Golf",
+  "short_name": "Waldeck Golf",
+  "description": "Mobile Golf-Scorecard für Runden, Plätze, Spieler und Punkte.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071b14",
+  "theme_color": "#0b3d2e",
+  "lang": "de"
+}

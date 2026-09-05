@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#082d21">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Waldini Golf">
+<title>Waldeck Golf</title>
+<style>
+:root{--g:#082d21;--g2:#0c6343;--gold:#c9a44c;--bg:#f4f7f5;--card:#fff;--line:#dbe5df;--ink:#10261e;--muted:#718079;--soft:#e9f1ed;--danger:#a43b32}
+*{box-sizing:border-box}body{margin:0;background:#dfe6e1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}.app{max-width:540px;min-height:100vh;margin:auto;background:var(--bg);padding-bottom:30px}
+.hero{background:linear-gradient(145deg,#062a1e,#0d5d40);color:#fff;padding:18px 15px 15px;border-radius:0 0 25px 25px}.brand{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.7}.title{font-size:28px;font-weight:850;margin:3px 0}.sub{font-size:13px;opacity:.82}.top{display:flex;justify-content:space-between;align-items:flex-start}.pill{background:#ffffff18;border:1px solid #ffffff25;border-radius:99px;padding:7px 10px;font-size:11px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}.metric{background:#ffffff12;border:1px solid #ffffff20;border-radius:12px;padding:8px 6px}.metric small{display:block;font-size:8px;text-transform:uppercase;opacity:.65}.metric b{font-size:18px}
+main{padding:12px}.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:11px}.nav button{background:#e6eee9;color:#466158;padding:9px 4px;font-size:12px}.nav button.active{background:var(--g);color:#fff}.view{display:none}.view.active{display:block}.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:13px;margin-bottom:11px;box-shadow:0 3px 13px #10261e08}.panelhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}h2{font-size:16px;margin:0}.badge{font-size:9px;font-weight:800;color:var(--g2);background:var(--soft);padding:6px 8px;border-radius:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.field label{display:block;font-size:9px;text-transform:uppercase;font-weight:800;color:var(--muted);margin:0 0 4px 2px}input,select{width:100%;border:1px solid #cbd8d1;border-radius:10px;background:#fbfdfc;padding:10px 9px;font-size:16px;color:var(--ink);outline:none}input:focus,select:focus{border-color:var(--g2);box-shadow:0 0 0 3px #0c634315}.actions{display:flex;gap:7px;margin-top:9px}button{border:0;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer}.primary{background:var(--g2);color:#fff;flex:1}.secondary{background:var(--soft);color:var(--g2)}.danger{background:#fff0ee;color:var(--danger)}
+.hscroll{overflow-x:auto;margin:0 -13px;padding:0 13px}.score{border-collapse:separate;border-spacing:0;min-width:625px;width:100%;font-size:12px}.score th{background:#edf3ef;color:#5b7067;font-size:9px;text-transform:uppercase;padding:7px 5px;border-bottom:1px solid var(--line)}.score td{padding:5px;border-bottom:1px solid var(--line);text-align:center}.score th:first-child,.score td:first-child{position:sticky;left:0;background:#fff;z-index:2;text-align:left;font-weight:800}.score th:first-child{background:#edf3ef}.score input{width:43px;text-align:center;padding:7px 2px;font-size:16px}.v{font-weight:800;color:var(--g2)}.pts{font-weight:900;color:var(--gold);font-size:14px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#e7eee9;border-radius:10px;padding:3px;margin-bottom:9px}.tab{background:transparent;color:#63766d}.tab.active{background:#fff;color:var(--g);box-shadow:0 2px 6px #0000000b}.nine{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}.ninebox{background:var(--soft);border-radius:11px;padding:9px}.ninebox small{display:block;color:#61736b;font-size:9px}.ninebox b{font-size:21px;color:var(--g)}
+.result{display:grid;grid-template-columns:1.2fr 1fr;gap:7px}.heroresult{background:var(--g);color:#fff;border-radius:15px;padding:14px}.heroresult small{font-size:9px;opacity:.7}.heroresult strong{display:block;font-size:38px}.heroresult span{font-size:11px;opacity:.85}.side{display:grid;gap:7px}.mini{background:#fff;border:1px solid var(--line);border-radius:13px;padding:9px}.mini small{display:block;color:var(--muted);font-size:9px}.mini b{font-size:20px;color:var(--g2)}
+.target{background:linear-gradient(135deg,#fffdf6,#fff);border:1px solid #e8dcc0}.targetline{display:flex;justify-content:space-between;align-items:center}.targetnum{font-size:28px;color:#8d6d22;font-weight:850}.progress{height:9px;background:#e9eee9;border-radius:99px;overflow:hidden;margin-top:8px}.bar{height:100%;width:0;background:var(--gold);transition:.25s}.small{font-size:11px;color:var(--muted);line-height:1.45}.list{display:grid;gap:7px}.item{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.item b{display:block;font-size:13px}.item small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.item .actions{margin:0}.chart{height:190px;display:flex;align-items:flex-end;gap:6px;padding:12px 4px 22px;border-bottom:1px solid var(--line);overflow:hidden}.barcol{flex:1;min-width:16px;text-align:center;position:relative;height:100%;display:flex;align-items:flex-end}.barcol i{display:block;width:100%;background:var(--g2);border-radius:5px 5px 0 0;min-height:3px}.barcol span{position:absolute;bottom:-20px;left:0;right:0;font-size:8px;color:var(--muted)}.empty{text-align:center;padding:18px;color:var(--muted);font-size:12px}.help{font-size:11px;color:var(--muted);line-height:1.45}.footer{text-align:center;color:#89958f;font-size:10px;padding:4px 10px 20px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#082d21;color:#fff;padding:10px 15px;border-radius:99px;font-size:12px;display:none;z-index:50;box-shadow:0 8px 20px #0003}
+@media(max-width:370px){.metrics{grid-template-columns:repeat(2,1fr)}.nav{grid-template-columns:repeat(2,1fr)}}
+</style>
+
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#0b3d2e">
+<meta name="apple-mobile-web-app-title" content="Waldeck Golf">
+
+</head>
+<body>
+<div class="app">
+<header class="hero">
+<div class="top"><div><div class="brand">Waldini Golf</div><div class="title">Scorecard</div><div class="sub" id="heroCourse">Dein Golfplatz</div></div><div class="pill" id="heroTee">Gelb</div></div>
+<div class="metrics"><div class="metric"><small>HCP Index</small><b id="mHI">20,5</b></div><div class="metric"><small>CR</small><b id="mCR">72,0</b></div><div class="metric"><small>Slope</small><b id="mSlope">113</b></div><div class="metric"><small>Vorgabe</small><b id="mCH">20</b></div></div>
+</header>
+<main>
+<nav class="nav">
+<button class="active" onclick="view('round',this)">⛳ Runde</button><button onclick="view('courses',this)">📍 Plätze</button><button onclick="view('players',this)">👤 Spieler</button><button onclick="view('history',this)">📊 Verlauf</button>
+</nav>
+
+<section id="round" class="view active">
+<section class="panel">
+<div class="panelhead"><h2>Spieler & Platz</h2><span class="badge">LIVE</span></div>
+<div class="grid"><div class="field"><label>Spieler</label><select id="player" onchange="selectPlayer()"></select></div><div class="field"><label>Golfplatz</label><select id="courseSelect" onchange="selectCourse()"></select></div>
+<div class="field"><label>Abschlag</label><input id="tee" value="Gelb"></div><div class="field"><label>Handicap Index</label><input id="hi" type="number" step=".1" value="20.5" onchange="calc()"></div>
+<div class="field"><label>Course Rating</label><input id="cr" type="number" step=".1" value="72" onchange="calc()"></div><div class="field"><label>Slope Rating</label><input id="slope" type="number" value="113" onchange="calc()"></div>
+<div class="field"><label>Par</label><input id="par" type="number" value="72" onchange="calc()"></div></div>
+<div class="actions"><button class="primary" onclick="saveRound()">Runde speichern</button><button class="secondary" onclick="newRound()">Neu</button></div>
+</section>
+
+<section class="panel">
+<div class="panelhead"><h2>Scorekarte</h2><span class="badge">18 LOCH</span></div>
+<div class="tabs"><button class="tab active" onclick="half=0;calc();tabs(this)">Vordere 9</button><button class="tab" onclick="half=1;calc();tabs(this)">Hintere 9</button></div>
+<div class="hscroll"><table class="score" id="score"></table></div>
+<div class="nine"><div class="ninebox"><small>FRONT 9 · PUNKTE</small><b id="frontPts">0</b></div><div class="ninebox"><small>BACK 9 · PUNKTE</small><b id="backPts">0</b></div></div>
+</section>
+
+<section class="panel target">
+<div class="panelhead"><h2>🎯 Live-Ziel</h2><span class="badge">36 PUNKTE</span></div>
+<div class="targetline"><div><div class="small" id="targetInfo">Ziel für eine Runde mit 36 Punkten</div><div class="targetnum" id="need">36</div></div><div class="small" id="remaining">noch 18 Löcher</div></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="small" id="targetText">Trage deinen Score ein.</div>
+</section>
+
+<section class="result">
+<div class="heroresult"><small>NETTOPUNKTE</small><strong id="points">0</strong><span id="resultText">Scores eintragen</span></div>
+<div class="side"><div class="mini"><small>BRUTTO</small><b id="gross">0</b></div><div class="mini"><small>NETTO</small><b id="net">0</b></div></div>
+</section>
+<p class="help">Die Course-Handicap-Berechnung folgt der WHS-Formel. Der Live-Zielwert ist eine Spielhilfe und ersetzt keine offizielle Handicap-Berechnung.</p>
+</section>
+
+<section id="courses" class="view">
+<section class="panel"><div class="panelhead"><h2>Golfplatz anlegen</h2><span class="badge">LOKAL</span></div>
+<div class="grid"><div class="field"><label>Platzname</label><input id="newCourseName" placeholder="z. B. Green Eagle"></div><div class="field"><label>Abschlag</label><input id="newCourseTee" value="Gelb"></div><div class="field"><label>Par</label><input id="newCoursePar" type="number" value="72"></div><div class="field"><label>Course Rating</label><input id="newCourseCR" type="number" step=".1" value="72"></div><div class="field"><label>Slope Rating</label><input id="newCourseSlope" type="number" value="113"></div></div>
+<div class="hscroll" style="margin-top:10px"><table class="score" id="courseHoles"></table></div>
+<div class="actions"><button class="primary" onclick="saveCourse()">Golfplatz speichern</button><button class="secondary" onclick="defaultHoles()">18 Standardlöcher</button></div>
+</section>
+<section class="panel"><div class="panelhead"><h2>Meine Plätze</h2><span class="badge" id="courseCount">0</span></div><div id="courseList" class="list"></div></section>
+</section>
+
+<section id="players" class="view">
+<section class="panel"><div class="panelhead"><h2>Spieler verwalten</h2><span class="badge">MEHRERE</span></div>
+<div class="grid"><div class="field"><label>Name</label><input id="newPlayerName" placeholder="z. B. Waldini"></div><div class="field"><label>Handicap Index</label><input id="newPlayerHI" type="number" step=".1" placeholder="20.5"></div></div>
+<div class="actions"><button class="primary" onclick="savePlayer()">Spieler hinzufügen</button></div></section>
+<section class="panel"><div id="playerList" class="list"></div></section>
+</section>
+
+<section id="history" class="view">
+<section class="panel"><div class="panelhead"><h2>HCP- & Scoring-Verlauf</h2><span class="badge">LETZTE RUNDEN</span></div><div id="stats" class="small"></div><div id="chart" class="chart"></div><div id="historyList" class="list" style="margin-top:12px"></div></section>
+</section>
+</main>
+<div class="footer">Waldini Golf V3 · Daten werden lokal auf diesem Gerät gespeichert</div>
+</div>
+<div id="toast" class="toast"></div>
+
+<script>
+const KEY='waldini_golf_v3';
+let half=0;
+const defaultHoleData=()=>[4,4,3,5,4,4,3,5,4,4,5,4,3,4,4,3,5,4].map((p,i)=>({par:p,index:i+1}));
+let holes=defaultHoleData().map(x=>({...x,score:''}));
+function DB(){try{return JSON.parse(localStorage.getItem(KEY)||'{"players":[],"courses":[],"rounds":[]}')}catch(e){return {players:[],courses:[],rounds:[]}}}
+function put(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function $(id){return document.getElementById(id)}
+function n(id){return parseFloat($(id).value)||0}
+function toast(t){let e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(window.__t);window.__t=setTimeout(()=>e.style.display='none',1700)}
+function view(id,btn){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');if(id==='courses')renderCourses();if(id==='players')renderPlayers();if(id==='history')renderHistory();if(id==='round')refreshSelects()}
+function tabs(el){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));el.classList.add('active')}
+function stroke(idx,ch){return ch>0?Math.floor(ch/18)+(idx<=ch%18?1:0):0}
+function calc(){
+ let hi=n('hi'),slope=n('slope'),cr=n('cr'),par=n('par'),raw=hi*slope/113+(cr-par),ch=Math.round(raw);
+ $('mHI').textContent=hi.toFixed(1).replace('.',',');$('mCR').textContent=cr.toFixed(1).replace('.',',');$('mSlope').textContent=slope;$('mCH').textContent=ch;
+ $('heroCourse').textContent=$('courseSelect').value||'Dein Golfplatz';$('heroTee').textContent=$('tee').value||'Gelb';
+ let start=half*9,end=start+9,h='<tr><th>Loch</th><th>Par</th><th>HCP</th><th>Vorg.</th><th>Score</th><th>Netto</th><th>Pkt.</th></tr>';
+ for(let i=start;i<end;i++){let x=holes[i],s=+x.score||0,st=stroke(+x.index,ch),ns=s?Math.max(0,s-st):0,p=s?Math.max(0,2+(+x.par-ns)):0;h+=`<tr><td>${i+1}</td><td>${x.par}</td><td>${x.index}</td><td class=v>${st}</td><td><input inputmode=numeric type=number min=1 max=20 value="${x.score}" onchange="holes[${i}].score=this.valueAsNumber||'';calc()"></td><td>${s?ns:'–'}</td><td class=pts>${s?p:'–'}</td></tr>`}
+ $('score').innerHTML=h;
+ let gross=0,net=0,pts=0,fp=0,bp=0,played=0;holes.forEach((x,i)=>{let s=+x.score||0;if(s){played++;gross+=s;let ns=Math.max(0,s-stroke(+x.index,ch));net+=ns;let p=Math.max(0,2+(+x.par-ns));pts+=p;i<9?fp+=p:bp+=p}});
+ $('gross').textContent=gross;$('net').textContent=net;$('points').textContent=pts;$('frontPts').textContent=fp;$('backPts').textContent=bp;
+ let remain=18-played,need=Math.max(0,36-pts);$('need').textContent=need;$('remaining').textContent='noch '+remain+' Loch'+(remain===1?'':'löcher');let pct=Math.min(100,pts/36*100);$('bar').style.width=pct+'%';
+ $('targetText').textContent=remain?`Du brauchst im Schnitt ${remain?(need/remain).toFixed(1):0} Punkt(e) pro verbleibendem Loch für 36.`:(pts>=36?'Ziel erreicht!':'Ziel verpasst – Runde abgeschlossen.');
+ $('resultText').textContent=gross?`Spielvorgabe ${ch} · ${gross} Schläge`:'Scores eintragen';
+}
+function defaultHoles(){let t=defaultHoleData();$('courseHoles').innerHTML='<tr><th>Loch</th>'+t.map((_,i)=>`<th>${i+1}</th>`).join('')+'</tr><tr><th>Par</th>'+t.map((x,i)=>`<td><input id="cp${i}" type=number value=${x.par} min=3 max=6></td>`).join('')+'</tr><tr><th>HCP</th>'+t.map((x,i)=>`<td><input id="ci${i}" type=number value=${x.index} min=1 max=18></td>`).join('')+'</tr>'}
+function saveCourse(){
+ let d=DB(),name=$('newCourseName').value.trim();if(!name)return toast('Bitte Platzname eingeben');let hs=Array.from({length:18},(_,i)=>({par:+$('cp'+i).value||4,index:+$('ci'+i).value||i+1}));
+ let c={id:Date.now(),name,tee:$('newCourseTee').value||'Gelb',par:n('newCoursePar'),cr:n('newCourseCR'),slope:n('newCourseSlope'),holes:hs};d.courses.unshift(c);put(d);refreshSelects();renderCourses();toast('Golfplatz gespeichert')
+}
+function renderCourses(){let d=DB();$('courseCount').textContent=d.courses.length;$('courseList').innerHTML=d.courses.length?d.courses.map(c=>`<div class=item><div><b>${c.name}</b><small>${c.tee} · Par ${c.par} · CR ${c.cr} · Slope ${c.slope}</small></div><div><button class=secondary onclick="loadCourse(${c.id})">Laden</button><button class=danger onclick="delCourse(${c.id})">×</button></div></div>`).join(''):'<div class=empty>Noch keine Golfplätze gespeichert.</div>'}
+function loadCourse(id){let c=DB().courses.find(x=>x.id===id);if(!c)return;$('courseSelect').value=c.id;applyCourse(c);viewRound();toast(c.name+' geladen')}
+function applyCourse(c){$('tee').value=c.tee;$('par').value=c.par;$('cr').value=c.cr;$('slope').value=c.slope;holes=c.holes.map(x=>({...x,score:''}));calc()}
+function selectCourse(){let id=+$('courseSelect').value;if(id){let c=DB().courses.find(x=>x.id===id);if(c)applyCourse(c)}}
+function refreshSelects(){let d=DB();let ps=d.players;if(!ps.length){d.players=[{id:1,name:'Waldini',hi:20.5}];put(d);ps=d.players}let old=$('player').value; $('player').innerHTML=ps.map(p=>`<option value="${p.id}">${p.name} · HCP ${p.hi}</option>`).join('');if(old)$('player').value=old;let cs=d.courses;let co=$('courseSelect').value;$('courseSelect').innerHTML='<option value="">— Platz wählen —</option>'+cs.map(c=>`<option value="${c.id}">${c.name} · ${c.tee}</option>`).join('');if(co)$('courseSelect').value=co}
+function selectPlayer(){let p=DB().players.find(x=>x.id==$('player').value);if(p){$('hi').value=p.hi;calc()}}
+function savePlayer(){let d=DB(),name=$('newPlayerName').value.trim(),hi=parseFloat($('newPlayerHI').value);if(!name||isNaN(hi))return toast('Name und HCP eingeben');d.players.push({id:Date.now(),name,hi});put(d);refreshSelects();renderPlayers();$('newPlayerName').value='';$('newPlayerHI').value='';toast('Spieler gespeichert')}
+function renderPlayers(){let d=DB();$('playerList').innerHTML=d.players.map(p=>`<div class=item><div><b>${p.name}</b><small>Handicap Index ${p.hi.toFixed(1)}</small></div>${d.players.length>1?`<button class=danger onclick="delPlayer(${p.id})">×</button>`:''}</div>`).join('')}
+function delPlayer(id){let d=DB();d.players=d.players.filter(p=>p.id!==id);put(d);refreshSelects();renderPlayers()}
+function saveRound(){let d=DB(),p=d.players.find(x=>x.id==$('player').value),scores=holes.map(x=>+x.score||0);if(!scores.some(Boolean))return toast('Erst Scores eintragen');let ch=Math.round(n('hi')*n('slope')/113+(n('cr')-n('par')));let pts=0,gross=0;holes.forEach(x=>{let s=+x.score||0;if(s){gross+=s;let ns=Math.max(0,s-stroke(+x.index,ch));pts+=Math.max(0,2+(+x.par-ns))}});d.rounds.unshift({id:Date.now(),date:new Date().toLocaleDateString('de-DE'),player:p?p.name:'Spieler',hi:n('hi'),course:$('courseSelect').selectedOptions[0]?.textContent||'Freier Platz',tee:$('tee').value,cr:n('cr'),slope:n('slope'),par:n('par'),ch,gross,pts,holes:holes.map(x=>({...x,score:+x.score||0}))});d.rounds=d.rounds.slice(0,100);put(d);renderHistory();toast('Runde gespeichert')}
+function renderHistory(){let d=DB(),rs=d.rounds;if(!rs.length){$('stats').textContent='Noch keine gespeicherten Runden.';$('chart').innerHTML='';$('historyList').innerHTML='';return}let avg=rs.reduce((a,r)=>a+r.pts,0)/rs.length,best=Math.max(...rs.map(r=>r.pts));$('stats').textContent=`${rs.length} Runden · Ø ${avg.toFixed(1)} Nettopunkte · Bestwert ${best}`;let mx=Math.max(36,...rs.map(r=>r.pts));$('chart').innerHTML=rs.slice(0,20).reverse().map((r,i)=>`<div class=barcol><i style="height:${Math.max(3,r.pts/mx*100)}%"></i><span>${r.pts}</span></div>`).join('');$('historyList').innerHTML=rs.map(r=>`<div class=item><div><b>${r.course}</b><small>${r.date} · ${r.player} · ${r.gross} Brutto · ${r.pts} Punkte · Vorgabe ${r.ch}</small></div><button class=danger onclick="delRound(${r.id})">×</button></div>`).join('')}
+function delRound(id){let d=DB();d.rounds=d.rounds.filter(r=>r.id!==id);put(d);renderHistory();toast('Runde gelöscht')}
+function viewRound(){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));$('round').classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));document.querySelector('.nav button').classList.add('active');refreshSelects();calc()}
+function newRound(){if(!confirm('Aktuelle Scorekarte löschen?'))return;holes=defaultHoleData().map(x=>({...x,score:''}));calc();toast('Neue Runde')}
+defaultHoles();refreshSelects();calc();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+  });
+}
+</script>
+
+</body></html>
